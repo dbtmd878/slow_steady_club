@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { useIconDispatch } from "../../../Context/icon_context";
 import Clock from "../../Title/TitleClock/clock";
 import WeatherIcon from "../../Title/weatherIcon/weathericon";
 
@@ -28,15 +29,30 @@ const MidBannerInfoBlock = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
+  align-items: center;
   font-size: 1rem;
 `;
 
-const InfoBlock = styled.div`
-  background-color: white;
-
-  justify-content: space-around;
+const LeftIconBlock = styled.div`
+  text-align: right;
+  width: 25%;
 `;
+const LeftIconTag = styled.img`
+  cursor: pointer;
+  width: 8rem;
+`;
+const CenterDaysBlock = styled.div`
+  width: 50%;
+`;
+const RightTempBlcok = styled.div`
+  width: 25%;
+`;
+
 function MidBanner(props) {
+  const dispatch = useIconDispatch();
+  const onClick = () => {
+    dispatch({ type: "HOME" });
+  };
   return (
     <MidBannerBlock>
       <MidBannerTitleBlock>
@@ -44,12 +60,19 @@ function MidBanner(props) {
       </MidBannerTitleBlock>
 
       <MidBannerInfoBlock>
-        <img
-          src="http://slowsteadyclub.com/web/baton/images/logo/ssc_square_logo.png"
-          alt=""
-        />
-        <Clock />
-        <WeatherIcon />
+        <LeftIconBlock>
+          <LeftIconTag
+            onClick={onClick}
+            src="http://slowsteadyclub.com/web/baton/images/logo/ssc_square_logo.png"
+            alt="logo"
+          />
+        </LeftIconBlock>
+        <CenterDaysBlock>
+          <Clock />
+        </CenterDaysBlock>
+        <RightTempBlcok>
+          <WeatherIcon />
+        </RightTempBlcok>
       </MidBannerInfoBlock>
     </MidBannerBlock>
   );

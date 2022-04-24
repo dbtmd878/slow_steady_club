@@ -1,4 +1,5 @@
 import React, { Children, createContext, useContext, useReducer } from "react";
+import { Link } from "react-router-dom";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -9,6 +10,9 @@ function reducer(state, action) {
       return window.open(
         "https://www.youtube.com/channel/UCA3xtMr5p_oYH3XPpqugvoA"
       );
+    }
+    case "HOME": {
+      return <Link to="/"></Link>;
     }
     default: {
       throw new Error("잘못됬다");

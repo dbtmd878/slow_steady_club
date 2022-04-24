@@ -1,10 +1,14 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ClockBlock = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+`;
+
+const DaysBlock = styled.div`
+  text-align: center;
 `;
 function Clock(props) {
   const [time, setTime] = useState(new Date());
@@ -24,16 +28,21 @@ function Clock(props) {
 
   const Time = new Intl.DateTimeFormat("en-US", options).format(time);
   const timeunit = time.getHours() <= 11 ? "AM" : "PM";
+  const hours = time.getHours() < 10 ? "0" + time.getHours() : time.getHours();
+  const minutes =
+    time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
+  const second =
+    time.getSeconds() < 10 ? "0" + time.getSeconds() : time.getSeconds();
 
   return (
     <ClockBlock>
-      <div>
+      <DaysBlock>
         <p>TODAY</p>
         <p>{Time}</p>
-      </div>
+      </DaysBlock>
       <div>
         {timeunit}&nbsp;
-        {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}
+        {hours}:{minutes}:{second}
       </div>
     </ClockBlock>
   );
