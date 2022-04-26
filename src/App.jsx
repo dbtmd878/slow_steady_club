@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import HomeTemplate from "./components/HomeTemplate/home_template";
-import Header from "./components/Header/Title/header";
+
 import Home from "./components/Main/Home/home";
 import Footer from "./components/Footer/footer";
 import { IconContext } from "./components/Context/icon_context";
+import Header from "./components/Header/header";
 
 const GlobalStyled = createGlobalStyle`
   body{

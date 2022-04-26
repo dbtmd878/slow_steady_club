@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import MidBanner from "../Banner/MidBanner/mid_banner";
+import BottomBanner from "./Banner/BottomBanner/bottom_banner";
+import MidBanner from "./Banner/MidBanner/mid_banner";
 
-import TopBanner from "../Banner/TopBanner/top_banner";
+import TopBanner from "./Banner/TopBanner/top_banner";
 
 const HeaderBlock = styled.div`
   display: flex;
@@ -21,6 +22,9 @@ function Header(props) {
         </div>
         <div>
           <MidBanner />
+        </div>
+        <div>
+          <BottomBanner />
         </div>
       </HeaderBlock>
     </div>
