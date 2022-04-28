@@ -1,7 +1,8 @@
-import React, { Children, createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
 
 function reducer(state, action) {
+  console.log(action);
   switch (action.type) {
     case "INSTA": {
       return window.open("https://www.instagram.com/slowsteadyclub/");

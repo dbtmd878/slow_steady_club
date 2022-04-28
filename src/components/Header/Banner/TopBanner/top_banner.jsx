@@ -25,6 +25,9 @@ const TopMidBlock = styled.div`
 const IconBlock = styled.div`
   margin: 0 0.4rem;
   cursor: pointer;
+  .icon {
+    pointer-events: none;
+  }
 `;
 
 const TopMidUrlLink = styled(Link)`
@@ -48,17 +51,17 @@ function TopBanner(props) {
   const dispatch = useIconDispatch();
 
   const onClick = (e) => {
-    console.log(e.target);
-    dispatch({ type: e.target.id });
+    console.log(e.target.dataset.id);
+    dispatch({ type: e.target.dataset.id });
   };
   return (
     <TopBannerBlock>
       <TopLeftBlock>
-        <IconBlock>
-          <AiOutlineYoutube onClick={onClick} id="INSTA" />
+        <IconBlock onClick={onClick} data-id="YOUTUBE">
+          <AiOutlineYoutube className="icon" />
         </IconBlock>
-        <IconBlock>
-          <AiOutlineInstagram onClick={onClick} id="YOUTUBE" />
+        <IconBlock onClick={onClick} data-id="INSTA">
+          <AiOutlineInstagram className="icon" />
         </IconBlock>
       </TopLeftBlock>
 

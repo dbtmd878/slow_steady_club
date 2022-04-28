@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const NavBarBlock = styled.div``;
@@ -13,9 +13,9 @@ const LiList = styled.li`
   cursor: pointer;
 `;
 
-function NavBar({ onClick }) {
+const NavBar = ({ onClick }) => {
   const click = () => {
-    onClick();
+    return onClick("NAVINFO");
   };
   return (
     <NavBarBlock>
@@ -28,6 +28,6 @@ function NavBar({ onClick }) {
       </UlList>
     </NavBarBlock>
   );
-}
+};
 
 export default React.memo(NavBar);
