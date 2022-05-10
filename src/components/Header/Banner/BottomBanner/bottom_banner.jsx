@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import { AiOutlineSearch, AiFillCaretDown } from "react-icons/ai";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
-import BrandNav from "./NavBar/BrandNav/brand_nav";
-import InformationNav from "./NavBar/InforemationNav/information_nav";
 import NavBar from "./NavBar/navbar";
 import NavbarType from "./NavBar/navbar_type";
-import SearchNav from "./NavBar/SearchNav/search_nav";
 
 // CSS
 const BottomBlock = styled.div``;
@@ -92,14 +89,12 @@ const BottomBanner = (props) => {
   const onClick = (type) => {
     if (open === false) {
       setOpen(!open);
-      console.log(open);
       setState(type);
       setValue(!value);
     } else {
-      const timer = setTimeout(() => setOpen(!open), 500);
+      setTimeout(() => setOpen(!open), 500);
       setValue(!value);
       setState(type);
-      return clearTimeout(timer);
     }
   };
 

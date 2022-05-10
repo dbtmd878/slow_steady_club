@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import HomeCalendar from "./HomeCalendar/home_calendar";
 import HomeNews from "./HomeNews/home_news";
+import HomeToday from "./HomeToday/home_today";
 
 const HomeBlock = styled.div`
   display: flex;
@@ -10,7 +12,17 @@ const HomeBlock = styled.div`
   height: 100%;
   /* background-color: plum; */
 `;
-
+const HomeMidBlock = styled.div`
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+`;
+const HomeLeftSide = styled.div`
+  width: 65%;
+`;
+const HomeRightSide = styled.div`
+  width: 35%;
+`;
 function Home(props) {
   return (
     <HomeBlock>
@@ -19,6 +31,14 @@ function Home(props) {
         alt=""
       />
       <HomeNews />
+      <HomeMidBlock>
+        <HomeLeftSide>
+          <HomeToday />
+        </HomeLeftSide>
+        <HomeRightSide>
+          <HomeCalendar />
+        </HomeRightSide>
+      </HomeMidBlock>
     </HomeBlock>
   );
 }
