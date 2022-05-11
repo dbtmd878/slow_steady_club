@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HomeCalendar from "./HomeCalendar/home_calendar";
 import HomeNews from "./HomeNews/home_news";
 import HomeToday from "./HomeToday/home_today";
+import HomeWeekly from "./HomeWeekly/home_weekly";
 
 const HomeBlock = styled.div`
   display: flex;
@@ -34,6 +35,7 @@ function Home(props) {
       <HomeMidBlock>
         <HomeLeftSide>
           <HomeToday />
+          <HomeWeekly />
         </HomeLeftSide>
         <HomeRightSide>
           <HomeCalendar />

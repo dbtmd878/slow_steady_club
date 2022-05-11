@@ -14,6 +14,9 @@ function NavbarType({ type }) {
     case "BRAND": {
       return <BrandNav />;
     }
+    default: {
+      return;
+    }
   }
 }
 

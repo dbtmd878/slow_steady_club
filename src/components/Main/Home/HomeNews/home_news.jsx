@@ -14,6 +14,7 @@ const NewsContainer = styled.div`
 const NewsTitleBlock = styled.div`
   flex-direction: column;
   padding: 20px;
+  padding-left: 0;
   flex: 1;
   h2 {
     font-size: 2rem;
@@ -33,7 +34,7 @@ const TitleBlock = styled.div`
     content: "";
     width: 10px;
     height: 10px;
-    background-color: #03ff03;
+    background-color: #3c7eef;
     border-radius: 50%;
   }
   span {

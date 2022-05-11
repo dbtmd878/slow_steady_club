@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Weather from "../../../Header/Title/Weather/weather";
 import styled from "styled-components";
 import Spinner from "../../../Spinner/spinner";
@@ -55,7 +55,6 @@ const HomeToday = () => {
   const month = time.getMonth() < 10 ? "0" + time.getMonth() : time.getMonth();
   const date = time.getDate() < 10 ? "0" + time.getDate() : time.getDate();
   const day = arr[time.getDay()];
-  console.log(year, month, day, date);
 
   const weather = new Weather();
   const obj = {};
@@ -64,8 +63,7 @@ const HomeToday = () => {
     obj.temp = weather.main.temp;
     obj.name = weather.name;
     obj.icon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
-
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setLoading(true);
     }, 1000);
   }

@@ -23,15 +23,18 @@ function reducer(state, action) {
 
 const initialState = {};
 
+const PageDispatchContext = createContext();
 const PageStateContext = createContext();
 
 export function IconContext({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <PageStateContext.Provider value={dispatch}>
-      {children}
-    </PageStateContext.Provider>
+    <PageDispatchContext.Provider value={dispatch}>
+      <PageStateContext.Provider value={state}>
+        {children}
+      </PageStateContext.Provider>
+    </PageDispatchContext.Provider>
   );
 }
 

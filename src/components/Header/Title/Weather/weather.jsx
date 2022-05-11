@@ -16,7 +16,7 @@ function Weather(props) {
   const [location, setLocation] = useState({});
 
   useEffect(() => {
-    const navigetor = navigator.geolocation.getCurrentPosition((item) => {
+    navigator.geolocation.getCurrentPosition((item) => {
       locationObj(item).then((item) => setLocation(item));
     });
   }, []);
