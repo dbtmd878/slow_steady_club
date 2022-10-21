@@ -62,6 +62,7 @@ function HomeWeekly(props) {
       writer: "DDD",
     },
   });
+  
 
   return (
     <HomeWeeklyBlock>

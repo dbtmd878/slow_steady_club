@@ -92,7 +92,7 @@ const BottomBanner = (props) => {
       setState(type);
       setValue(!value);
     } else {
-      setTimeout(() => setOpen(!open), 500);
+      setTimeout(() => setOpen(!open), 1000);
       setValue(!value);
       setState(type);
     }
